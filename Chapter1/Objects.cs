@@ -15,8 +15,27 @@ public class Objects
      */
     public static void ObjectsDemo()
     {
+        // Created int type variable age
         int age = 28;
+        int age2 = 27;
+        Console.WriteLine(age);
+        
+        // Boxing operation i.e. "Boxing" (Casting) an int type into an object type
         object ageBoxing = age;
+        Console.WriteLine(ageBoxing);
+        
+        Console.WriteLine(ageBoxing.ToString());
+        Console.WriteLine(ageBoxing.GetType());
+        Console.WriteLine(ageBoxing.Equals(age));  // Comparing integer not reference
+        Console.WriteLine(ageBoxing.Equals(age2)); // If age2 = 28 this is True
+        Console.WriteLine(ageBoxing.GetHashCode());
+        
+        // Unboxing operation i.e. "Unboxing" (Casting) an object type back to an int type
         int ageUnboxing = (int)ageBoxing;
+        Console.WriteLine(ageUnboxing);
+        
+        
+        
+        
     }
 }
