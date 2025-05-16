@@ -19,15 +19,30 @@ public class Classes
      *           Write-only with the set accessor and without the get accessor
      *           Read-write with both get and set accessors
      */
+    public static void ClassesDemo()
+    {
+        Person person = new("Test") { Age = 30 };
+        person.Relocate("123");
+        float distance = person.GetDistance("200");
+        if (distance > 0) {Console.WriteLine(distance);}
+
+        PersonShorthand shortPerson = new("Short Test") { Age = 60 };
+        shortPerson.Relocate("234a");
+        float shortDistance = shortPerson.GetDistance("300");
+        if (shortDistance > 0) {Console.WriteLine(shortDistance);}
+    }
+    
+    
+    
     public class Person
     {
         private string _location = string.Empty;
         
         public string Name { get; set; } // getter & setter setup Name & Age
-        public required int Age { get; set; }
+        public required int Age { get; set; } // required if this should be set on init
 
         // Default for if no name is provided?
-        public Person() => Name = "---";
+        public Person() => Name = "---"; // expression body definition
 
         // Constructor
         public Person(string name)
@@ -46,13 +61,33 @@ public class Classes
 
         // Single line method, lambda can return float
         public float GetDistance(string location) => DistanceHelpers.GetDistance(_location, location);
-        
-        
-        
-        
+    }
+
+    public class PersonShorthand(string name)
+    {
+        // Our Person class can be condensed to 5 simple lines
+        private string _location = string.Empty;
+        public string Name { get; set; } = name;
+        public required int Age { get; set; }
+        public void Relocate(string? location) => _location = location ?? _location;
+        public float GetDistance(string location) => DistanceHelpers.GetDistance(_location, location);
     }
     
-    
+
+    public static class DistanceHelpers
+    {
+        public static float GetDistance(string a, string b)
+        {
+            try
+            {    // We try and convert strings a and b to a float type
+                float loc1 = float.Parse(a);
+                float loc2 = float.Parse(b);
+                // Then return the difference of the two
+                return loc2 - loc1;
+            }
+            catch {Console.WriteLine("Error: Please enter a valid integer."); return 0;}
+        }   
+    }
     
     
 }
