@@ -2,6 +2,9 @@
 
 public class Objects
 {
+    // ------------------------------------------------------------------------------------------------ //
+    //                                          Objects                                                 //
+    // ------------------------------------------------------------------------------------------------ //
     /*
      * Everything in C# derives from Object
      * The Object class is declared in the System namespace

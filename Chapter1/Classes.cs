@@ -2,6 +2,9 @@
 
 public class Classes
 {
+    // ------------------------------------------------------------------------------------------------ //
+    //                                          Classes                                                 //
+    // ------------------------------------------------------------------------------------------------ //
     /*
      * C# is an object-oriented language that supports declaring classes with various members like,
      * constructors, finalizers, constants, fields, properties, indexers, events, methods, operators, and delegates
@@ -60,7 +63,7 @@ public class Classes
         }
 
         // Single line method, lambda can return float
-        public float GetDistance(string location) => DistanceHelpers.GetDistance(_location, location);
+        public float GetDistance(string location) => DistanceHelper.GetDistance(_location, location);
     }
 
     public class PersonShorthand(string name)
@@ -70,15 +73,15 @@ public class Classes
         public string Name { get; set; } = name;
         public required int Age { get; set; }
         public void Relocate(string? location) => _location = location ?? _location;
-        public float GetDistance(string location) => DistanceHelpers.GetDistance(_location, location);
+        public float GetDistance(string location) => DistanceHelper.GetDistance(_location, location);
     }
     
 
-    public static class DistanceHelpers
+    public static class DistanceHelper
     {
         /*
          * DistanceHelpers class is static so that we don't have to instantiate the class to use its members
-         * the Same with all the methods, they need to be static, so we can call without creating objects
+         * the Same with all the methods, they need to be static, so we can call without creating DistanceHelper objects
          */
         public static float GetDistance(string a, string b)
         {

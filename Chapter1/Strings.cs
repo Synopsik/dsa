@@ -2,6 +2,9 @@
 
 public class Strings
 {
+    // ------------------------------------------------------------------------------------------------ //
+    //                                          Strings                                                 //
+    // ------------------------------------------------------------------------------------------------ //
     /*
      * A string can be set to a sequence of characters, a single char, an empty string, and null
      * Concatenation x + y is how you can perform operations on strings, duh!
