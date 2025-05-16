@@ -1,6 +1,6 @@
 # C# Data Structures and Algorithms
 
-This is my journal of progress through the book listed below. I will be trying to document and improve the way I learn 
+This is a journal of progress through the book listed below. I'll be trying to document and improve how I learn 
 to program through the various chapters. If you have any suggestions or tips on how I can improve some aspect of my code 
 please feel free to raise an issue so that I can learn something new.
 
