@@ -33,9 +33,8 @@ public static class Nullable
         age ??= 18;
         Console.WriteLine(age);
         
-        // Null conditional operator ?.
+        // Null conditional operator ?. returns null if number=null, else ToString is performed
         string? GetFormatted(float? number) => number?.ToString("F2");
-        
         
         return;
     }
