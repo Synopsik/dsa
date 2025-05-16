@@ -23,12 +23,12 @@ public class Classes
     {
         Person person = new("Test") { Age = 30 };
         person.Relocate("123");
-        float distance = person.GetDistance("200");
+        var distance = person.GetDistance("200");
         if (distance > 0) {Console.WriteLine(distance);}
 
         PersonShorthand shortPerson = new("Short Test") { Age = 60 };
         shortPerson.Relocate("234a");
-        float shortDistance = shortPerson.GetDistance("300");
+        var shortDistance = shortPerson.GetDistance("300");
         if (shortDistance > 0) {Console.WriteLine(shortDistance);}
     }
     
@@ -76,18 +76,20 @@ public class Classes
 
     public static class DistanceHelpers
     {
+        /*
+         * DistanceHelpers class is static so that we don't have to instantiate the class to use its members
+         * the Same with all the methods, they need to be static, so we can call without creating objects
+         */
         public static float GetDistance(string a, string b)
         {
             try
             {    // We try and convert strings a and b to a float type
-                float loc1 = float.Parse(a);
-                float loc2 = float.Parse(b);
+                var loc1 = float.Parse(a);
+                var loc2 = float.Parse(b);
                 // Then return the difference of the two
                 return loc2 - loc1;
             }
             catch {Console.WriteLine("Error: Please enter a valid integer."); return 0;}
         }   
     }
-    
-    
 }
