@@ -95,4 +95,37 @@ public class Classes
             catch {Console.WriteLine("Error: Please enter a valid integer."); return 0;}
         }   
     }
+
+    public class DeviceConfiguration
+    {
+        private string Username { get; set; }
+        private string Password { get; set; }
+
+        public DeviceConfiguration(string user, string pass)
+        {
+            Username = user;
+            Password = pass;
+        }
+    }
+
+    public class FutureDevice : IDevice
+    {
+        public int Id { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+
+        public void Configure(Classes.DeviceConfiguration configuration)
+        {
+            Console.WriteLine($"Configuring device {Id} with model {Model}");
+            ArgumentNullException.ThrowIfNull(configuration);
+            Console.WriteLine(configuration);
+            
+        }
+
+        public bool Start() {return false;}
+        public bool Stop() {return false;}
+    }
+    
+    
+    
 }
