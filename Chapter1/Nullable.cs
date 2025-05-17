@@ -24,7 +24,7 @@ public static class NullableDemo
         // If note is !null it's assigned to shownNote, else 5.0f is assigned
         float shownNote = note.GetValueOrDefault(5.0f);
         // If default value was assigned do something
-        if (shownNote == 5.0f) {Console.WriteLine(shownNote + 10.0f);}
+        if (shownNote.Equals(5.0f)) {Console.WriteLine(shownNote + 10.0f);}
         else {Console.WriteLine(shownNote);} // Otherwise display our shownNote
         
         DateTime date = new(1988, 11, 9);
@@ -86,6 +86,8 @@ public class NullableRef
                    && measurement.Value.MeasValue <= 1.0f;
             // OR return measurement is Measurement { MeasValue: >= 0.0f and <= 1.0f };
             // Is that enough to check for validity?
+            // OR this could even be condensed to a lambda method
+            // bool IsValid(Measurement? m) => m != null && m.Value.MeasValue >= 0.0f && m.Value.MeasValue <= 1.0f 
         }
     }
 }
