@@ -7,7 +7,7 @@ public static class Alias
     // ------------------------------------------------------------------------------------------------ //
     //                                          Alias                                                   //
     // ------------------------------------------------------------------------------------------------ //
-    // We can create an alias called Statistics at the beginning of this file
+    // We can create an alias called Statistics at the beginning of this file ^^
     public static void AliasDemo()
     {
         Statistics result2 = Functions.Calculate(420, 69, 1337);
