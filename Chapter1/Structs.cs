@@ -47,3 +47,18 @@ public readonly struct PriceShorter(decimal amount, CurrencyEnum currency)
     public override string ToString() => $"{Amount} {Currency}";
 }
 
+public struct Measurement
+{
+    public DateTime Timestamp { get; }
+    public float MeasValue { get; }
+    
+    public Measurement(DateTime timestamp, float measValue)
+    {
+        Timestamp = timestamp;
+        MeasValue = measValue;
+    }
+    public override string ToString()
+    {
+        return $"{Timestamp:HH:mm:ss:fff}: {MeasValue:F3}";
+    }
+}
