@@ -76,6 +76,24 @@ public class Arrays
         var subarray = new int[3];
         Array.Copy(numbers, 0, subarray, 0, 3);
         
+        // Extension methods - Methods that are "added" to an existing type. These can be called in the same way that
+        //                     they are defined directly as instance methods.
+        
+        // We can use Contains to see whether an element belongs to an array
+        bool contains = numbers.Contains(6);
+        
+        // We can use All to check whether all elements match a given predicate
+        bool noZeros2 = numbers.All(n => n != 0);
+
+        // We can use Any to check whether there is a single element that matches a given predicate
+        bool anyPositive2 = numbers.Any(n => n > 0);
+        
+        // Math extension methods - Min Max Average Sum
+
+        int min = numbers.Min();
+        int max = numbers.Max();
+        double avg = numbers.Average();
+        int sum = numbers.Sum();
 
     }
     
